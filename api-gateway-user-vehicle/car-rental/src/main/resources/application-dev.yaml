@@ -1,0 +1,35 @@
+server:
+  port: 8084 # Port d'écoute
+
+spring:
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+  application:
+    name: car-rental
+
+  datasource:
+    # L'URL avec une valeur par défaut si DB_URL n'est pas définie dans .env
+    url: jdbc:postgresql://localhost:5432/user_db
+    username: postgres # Récupéré de .env
+    password: 195020191986 # Récupéré de .env
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    # 1. CORRECTION: Suppression du double deux-points et utilisation du format YAML standard
+    hibernate:
+      ddl-auto: update
+
+    # 2. CORRECTION: 'show-sql' est un nom de propriété de haut niveau sous spring.jpa
+    show-sql: true
+
+    # 3. AJOUT RECOMMANDÉ: Spécification du dialecte pour PostgreSQL
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: WARN
+    org.hibernate.SQL: DEBUG

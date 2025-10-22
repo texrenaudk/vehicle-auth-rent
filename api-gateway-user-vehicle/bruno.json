@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "api-gateway-user-behicle",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

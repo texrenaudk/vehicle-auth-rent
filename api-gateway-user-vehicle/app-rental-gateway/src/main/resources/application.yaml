@@ -1,0 +1,15 @@
+server:
+  port: 8087
+spring:
+  application:
+          name: rental-car-gateway
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty: DEBUG
+    org.springframework.web.reactive.function.client: DEBUG

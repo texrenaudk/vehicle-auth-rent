@@ -1,0 +1,24 @@
+meta {
+  name: api-gateway-createAlssociation-vehicle-user
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8087/v1/vehicles/6/users/99999
+  body: none
+  auth: inherit
+}
+
+body:json {
+  {
+      "first_name": "ronaldo",
+       "last_name": "il fenomeno"
+       
+  
+  }
+}
+
+settings {
+  encodeUrl: true
+}

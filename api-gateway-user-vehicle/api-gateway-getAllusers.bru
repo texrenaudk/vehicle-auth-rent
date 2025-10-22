@@ -1,0 +1,15 @@
+meta {
+  name: api-gateway-getAllusers
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8087/v1/users
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

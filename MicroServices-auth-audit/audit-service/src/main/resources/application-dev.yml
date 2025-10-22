@@ -1,0 +1,29 @@
+server:
+  port: 8081 # Port d'écoute
+
+spring:
+  application:
+    name: audit-service
+
+  datasource:
+    # L'URL avec une valeur par défaut si DB_URL n'est pas définie dans .env
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/audit_db}
+    username: ${DB_USER} # Récupéré de .env
+    password: ${DB_PASSWORD} # Récupéré de .env
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    # 1. CORRECTION: Suppression du double deux-points et utilisation du format YAML standard
+    hibernate:
+      ddl-auto: ${DB_DDL_AUTO:update}
+
+    # 2. CORRECTION: 'show-sql' est un nom de propriété de haut niveau sous spring.jpa
+    show-sql: true
+
+    # 3. AJOUT RECOMMANDÉ: Spécification du dialecte pour PostgreSQL
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    root: INFO
